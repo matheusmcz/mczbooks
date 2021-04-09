@@ -19,7 +19,7 @@ interface BooksListProps {
 export interface Book {
   id: string;
   title: string;
-  authors?: Array<String>;
+  authors: Array<string>;
   imageUrl: string;
   pageCount: number;
   publisher: string;
@@ -32,7 +32,7 @@ export interface Book {
 
 export function BooksList({ books }: BooksListProps) {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
-  const [selectedBook, setSelectedBook] = useState<Book>({} as Book);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
   function handleOpenBookModal(book: Book) {
     setIsBookModalOpen(true);
@@ -42,6 +42,7 @@ export function BooksList({ books }: BooksListProps) {
 
   function handleCloseBookModal() {
     setIsBookModalOpen(false);
+    setSelectedBook(null);
   }
 
   return (
@@ -60,7 +61,8 @@ export function BooksList({ books }: BooksListProps) {
               <CardDescription>
                 <CardTitle>
                   <span>{book.title}</span>
-                  <span className="author">Ota Neto</span>
+
+                  <span className="author">{book.authors.join(", ")}</span>
                 </CardTitle>
                 <BookInfo>
                   <span>{book.pageCount} páginas</span>

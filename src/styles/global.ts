@@ -59,4 +59,21 @@ export const GlobalStyle = createGlobalStyle`
     background: #FFFFFF;
     border-radius: 0.25rem;
   }
+
+  .react-modal-close {
+    position: absolute;
+    display: flex;
+    background: #ffffff;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+
+    right: 0;
+    top: 0;
+    margin: 1rem 1rem 0 0;
+  }
 `;
