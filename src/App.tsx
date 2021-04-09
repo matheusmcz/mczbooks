@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Modal from "react-modal";
+import { BooksList } from "./components/BooksList";
 
-function App() {
+Modal.setAppElement("#root");
+
+export function App() {
+  const response = {
+    data: [
+      {
+        id: "8f41b92c7460b9337660427e",
+        title: "A Culpa é das Estrelas",
+        description:
+          "Hazel foi diagnosticada com câncer aos treze anos e agora, aos dezesseis, sobrevive graças a uma droga revolucionária que detém a metástase em seus pulmões. Ela sabe que sua doença é terminal e passa os dias vendo tevê e lendo Uma aflição imperial, livro cujo autor deixou muitas perguntas sem resposta. ",
+        authors: ["Jonh Green"],
+        pageCount: 288,
+        category: "Romance",
+        imageUrl: "https://files-books.ioasys.com.br/Book-0.jpg",
+        isbn10: "0062856626",
+        isbn13: "978-0062856623",
+        language: "Inglês",
+        publisher: "Intrínseca",
+        published: 2002,
+      },
+    ],
+    page: 1,
+    totalPages: 34,
+    totalItems: 674,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BooksList books={response.data} />
+    </>
   );
 }
-
-export default App;
