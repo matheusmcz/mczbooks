@@ -30,6 +30,7 @@ export function BooksModal({ isOpen, onRequestClose, book }: BooksModalProps) {
       {book && (
         <Container>
           <img src={book.imageUrl} alt="" />
+          <div className="gap" />
           <Description>
             <DescriptionHeader>
               <span>{book.title}</span>

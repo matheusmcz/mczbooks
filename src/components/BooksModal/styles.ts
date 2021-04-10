@@ -1,27 +1,89 @@
 import styled from "styled-components";
 
-export const Container = styled.form`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 3.1rem;
-  justify-content: center;
-  padding: 48px 0;
+export const Container = styled.div`
+  justify-content: space-between;
+  padding: 48px;
   border: none;
+  display: flex;
+
+  .gap {
+    width: 48px;
+  }
+
+  @media (max-width: 780px) {
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+
+    .gap {
+      width: 0;
+      height: 24px;
+    }
+  }
+
+  @media (min-width: 780px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 
   .resume {
     margin-bottom: 1rem;
   }
 
   img {
-    max-width: 349px;
-    max-height: 512px;
+    width: 100%;
   }
 `;
 
 export const Description = styled.div`
-  max-width: 276px;
   display: column;
+
+  width: 100%;
+  max-width: 276px;
+  min-width: 240px;
   max-height: 512px;
+
+  @media (min-width: 780px) {
+    overflow-y: auto;
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      margin-left: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ab2680;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-button {
+      height: 218px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    overflow: hidden;
+  }
+
+  overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    margin-left: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ab2680;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-button {
+    height: 218px;
+  }
 
   strong {
     font-family: "Heebo", sans-serif;
@@ -86,6 +148,11 @@ export const Resume = styled.div`
   color: #999999;
   text-align: justify;
   margin-top: 1rem;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const CloseModal = styled.button`

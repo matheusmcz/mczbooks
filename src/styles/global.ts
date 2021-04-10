@@ -47,18 +47,28 @@ export const GlobalStyle = createGlobalStyle`
     bottom: 0;
     right: 0;
     left: 0;
+    padding: 16px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 780px) {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      box-shadow: rgba(0, 0, 0, 0.4);
+    }
   }
 
   .react-modal-content{
-    width: 100%;
     max-width: 769px;
     background: #FFFFFF;
     border-radius: 0.25rem;
-  }
+
+    @media (min-width: 780px) {
+      overflow: auto;
+    }
+}
 
   .react-modal-close {
     position: absolute;

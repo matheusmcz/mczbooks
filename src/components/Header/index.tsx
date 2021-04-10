@@ -1,6 +1,12 @@
+import { useAuth } from "../../contexts/auth";
 import { Container, Content, HeaderText } from "./styles";
 
 export function Header() {
+  const { user, signOut } = useAuth();
+  const logOut = () => {
+    signOut();
+  };
+
   return (
     <Container>
       <Content>
@@ -8,8 +14,10 @@ export function Header() {
         <span>Books</span>
       </Content>
       <HeaderText>
-        Bem vindo, <strong>Guilherme</strong>
-        <button>
+        <span>
+          Bem vindo, <strong>{user.name}</strong>
+        </span>
+        <button onClick={logOut}>
           <img src="./assets/logOut.svg" alt="" />
         </button>
       </HeaderText>

@@ -1,23 +1,27 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 368px;
-  max-height: 224px;
-  margin-top: 18rem;
-  margin-bottom: 18rem;
-  margin-left: 7rem;
+  width: 400px;
+  margin-left: 7.6rem;
 
   .email {
     margin-top: 2.5rem;
   }
 
+  .passawordContainer {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
   input {
     height: 60px;
-    max-width: 368px;
+    min-width: 288px;
+    width: 100%;
     padding: 0.5rem 0 0 1rem;
+    position: relative;
 
     border-radius: 0.25rem;
     background: rgba(0, 0, 0, 0.32);
@@ -30,10 +34,6 @@ export const Container = styled.div`
     font-size: 1rem;
     font-weight: 400;
     line-height: 2rem;
-
-    & + input {
-      margin-top: 1rem;
-    }
 
     &::placeholder {
       font-family: "Heebo", sans-serif;
@@ -64,10 +64,10 @@ export const SubmitButton = styled.button`
   position: absolute;
   padding: 0.6rem 1.5rem;
 
-  bottom: 0;
+  top: 0;
   right: 0;
-  margin-bottom: 10px;
-  margin-right: 12px;
+  margin-top: 0.7rem;
+  margin-right: 0.7rem;
 
   border-radius: 44px;
   border: none;
